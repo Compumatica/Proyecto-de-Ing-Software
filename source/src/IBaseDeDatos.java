@@ -59,6 +59,6 @@ public interface IBaseDeDatos {
 	*  @date 11-04-2018
 	*  @since 0.1
 	*/
-	void cambiarContraseña(String usuario, String clave, String nuevaClave);
+	void cambiarClave(String usuario, String clave, String nuevaClave);
 	
 }
