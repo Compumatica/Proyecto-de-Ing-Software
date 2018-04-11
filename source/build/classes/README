@@ -1,0 +1,3 @@
+Aquí se almacenarán los .class. Los paquetes se representan como carpetas.
+
+Por ejemplo, si foo.java pertenece al paquete 'packA.packB', entonces foo.class se encontrará en 'build/classes/packA/packB/'.
