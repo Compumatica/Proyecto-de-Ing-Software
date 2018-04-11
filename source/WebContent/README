@@ -1,9 +1,9 @@
 Aquí se crearán los .jsp. La estructura del directorio será la siguiente:
 WebContent
     |- images  -> Imágenes que aparezcan en los htmls
-    |- /css    -> Hojas de estilo
-    |- /js     -> Códigos JavaScript
-    |- /lib    -> Librerías JQuery, BootStrap, etc.
+    |- css    -> Hojas de estilo
+    |- js     -> Códigos JavaScript
+    |- lib    -> Librerías JQuery, BootStrap, etc.
     |- index.jsp -> Página principal
     |- ...       -> Otros .jsp
     |- robots.txt
