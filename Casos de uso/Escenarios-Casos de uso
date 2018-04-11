@@ -1,1 +1,52 @@
+1. Escenario del caso: Responder a sugerencia
+---------------------------------------------
+  1- El usuario ofrece una sugerencia.
+  2- La IA consulta los datos.
+  3- Responde conforme a esos datos.
+  
+2. Escenario del caso: Aprendizaje del usuario
+---------------------------------------------
+  1- La IA aprender de los datos proporcionados por el usuario
+  * Casos alternativos
+    -Caso 1: Usuario de recién registrado
+      1- Aprende de los datos iniciales.
+    -Caso 2: Valoraciones anteriores
+      1- Aprende de las valoraciones.
+    -Caso 3: Comidas anteriores
+      1- Aprende de lo que ha comido anteriormente el usuario.
+      
+3. Escenario del caso: Borrar cuenta
+---------------------------------------------
+  1- El usuario o administrador manda una petición para borrar la cuenta.
+  2- La cuenta se borra.
 
+4. Escenario del caso: Contactar administrador
+---------------------------------------------
+  1- El usuario manda un ticket con un título y un texto exponiendo 
+     su duda o problema.
+
+  * Caso Alternativo: Ticket sin título o descripción
+    -Caso 1:
+      1- El usuario intenta mandar el ticket sin poner título o descripción.
+      
+5. Escenario del caso: Registrarse  
+---------------------------------------------
+  1- Elegir nombre de usuario y contraseña.
+  2- Aceptar términos y condiciones.
+  3- Introducir datos físicos relevantes respecto a la dieta 
+     (edad, altura, peso, género ...).
+  4- Introducir alérgenosy alimentos prohibidos.
+  5- Introducir tipo de alimentación.
+     Según ideología o religión con restricciones (cerdo, ternera, productos cárnicos...)
+  * Casos Alternativos:
+    -Caso 1: El nombre de usuario ya existe
+      1- Se elige otro nombre de usuario no repetido
+    -Caso 2: Introducir pass incorrecta (muy corta o con 
+             símbolos prohibidos) 
+      1-Volver a introducir una contraseña válida.
+    -Caso 3: Se introducen datos incorrectos (fuera de rango, o de tipo incorrecto)
+      1-Volver a introducir datos.
+6. Escenario del caso: Responder al soporte
+---------------------------------------------
+  1- El administrador recibe el ticket.
+  2- Contacta al ticket y le manda la respuesta al usuario.
