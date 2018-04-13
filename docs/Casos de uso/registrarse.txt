@@ -1,0 +1,25 @@
+Registrarse
+-----------
+1.- Elegir nombre de usuario y contraseña
+
+Escenario Alternativo 1:
+El nombre de usuario ya existe.
+1. Se elige otro nombre de usuario no repetido.
+Escenario Alternativo 2:
+1.Introducir pass incorrecta (muy corta o con 
+símbolos prohibidos) Volver a introducir una 
+contraseña correcta.
+
+2.- Aceptar términos y condiciones
+
+3.- Introducir datos físicos relevantes respecto 
+a la dieta (edad, altura, peso, género ...)
+
+Escenario Alternativo: 
+Se introducen datos incorrectos (fuera de rango, 
+o de tipo incorrecto)
+
+4.- Introducir alérgenos y alimentos prohibidos.
+
+5.- introducir tipo de alimentación.
+Según ideología o religión con restricciones (cerdo, ternera, productos cárnicos...)

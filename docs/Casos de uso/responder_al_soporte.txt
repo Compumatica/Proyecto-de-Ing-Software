@@ -1,0 +1,6 @@
+Reponder al soporte
+-------------------
+1.-El administrador recibe el ticket.
+
+1. Contacta al ticket y le manda la respuesta
+al usuario.
