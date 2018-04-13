@@ -1,7 +1,0 @@
-Contactar administrador
------------------------
-1.- El usuario manda un ticket con un título y un texto exponiendo 
-su duda o problema.
-
-Escenario Alternativo:
-1.El usuario intenta mandar el ticket sin poner título o descripción.
