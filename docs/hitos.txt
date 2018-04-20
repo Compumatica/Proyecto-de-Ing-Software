@@ -1,0 +1,45 @@
+Resumen Hitos
+*************
+1:  (v0.1)  Logueo
+2:  (v0.2)  Experiencia básica de usuario 
+                completar un perfil
+                introducir alergenos
+                pedir dieta : dar feedback a la IA
+3:  (v1.1)  Respuesta de la IA 
+                algoritmo -> peticion a la BBDD
+                recogida de datos recientes
+                calculo de nutrientes
+                ~
+                output
+4:  (v1.1b) Adornarlo 
+                Funciones adicionales
+                estadistica
+                recuperación de contraseñas
++---------------------------------------+
+Descripción Hitos
+*****************
+Hito 1: [27 abril]
+------
+    Frontend    ->  formulario web
+    
+    Backend     ->  comprobación de datos de logueo
+                    implementar la interfaz 
+                    convenir con BBDD
+                    
+    BBDD        ->  convenir con backend
+                    php hace las query
+                    diseñar la BBDD
+                    
+    Modelado    ->  diagramas y api concernientes al hito
+    
+Hito 2:
+------
+    Frontend    ->  lista de alérgenos
+                    peso[kg], altura[cm]
+                    petición de última comida-lista de alimentos
+                    opcion para valorar ultimas recomendaciones
+                    
+Hito 3:
+------
+Hito 4:
+------
