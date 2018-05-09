@@ -9,6 +9,14 @@ public class Alimentos {
 	public static int caloriasTotales = gramos * (caloria100Gramos/100);
 	List<String> nutrientes = Array.asList ("Proteinas", "Carbohidratos");
 	
+	// public Alimentos (String nombre, int gramos, int caloria100Gramos, int caloriasTotales, List<String> nutrientes){
+	//	this.nombre = nombre;
+	//	this.gramos = gramos;
+	//	this.caloria100Gramos = caloria100Gramos;
+	//	this.CaloriasTotales = caloriasTotales;
+	//	this.nutrientes= nutrientes;
+	//}
+	
 
 	assertThat(nombre, is("pasta"));
 	assertThat(gramos, is("100"));
