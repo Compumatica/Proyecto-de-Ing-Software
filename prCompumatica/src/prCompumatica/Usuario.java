@@ -2,14 +2,14 @@ package prCompumatica;
 
 public class Usuario {
 	private String usuario;
-	private String contraseña;
+	private String contraseÃ±a;
 	private String email;
 	
-	public Usuario(String usuario, String contraseña, String email){
+	public Usuario(String usuario, String contraseÃ±a, String email){
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contraseÃ±a = contraseÃ±a;
 		this.email = email;
-		Datos.RegistraUsuario(usuario, contraseña, email);
+		Datos.RegistraUsuario(usuario, contraseÃ±a, email);
 	}
 	
 	public String consultarDatosPersonales() {
@@ -26,7 +26,9 @@ public class Usuario {
 	
 	public void darOpinion(String texto) {
 		Opinion op = new Opinion(texto);
-		Opinion.mandarOpinion(op);
+		//falta implementar un constructor para la clase Datos
+		Datos datos = null;
+		op.mandarOpinion(datos);
 	}
 	
 	public String pedirDieta() {
