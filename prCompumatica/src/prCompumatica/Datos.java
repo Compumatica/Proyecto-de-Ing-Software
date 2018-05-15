@@ -17,10 +17,15 @@ public class Datos {
 		return "";
 	}
 
-	public static void RegistraUsuario(String usuario, String contraseña, String email) {
+	public static void RegistraUsuario(String usuario, String contraseÃ±a, String email) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-}
+
+	//Esta clase puede que no se implemente.
+	public void recibirOpinion(String op) {
+		// TODO Auto-generated method stub
+		
+	}}
