@@ -14,16 +14,17 @@ public class Alimento {
 	private float carbohidratosPor100Gramos;
 	private float grasasPor100Gramos;
 	
-	public Alimento(String nombre, float calorias, float grasas, float carbohidratos,
-			           float proteinas, Alergeno ... alergenos){
+	public Alimento(String nombre, float calorias,float grasasPor100Gramos,float carbohidratosPor100Gramos
+			           ,float proteinasPor100Gramos, Alergeno ... alergenos){
 		this.nombre = nombre;
 		
 		this.alergenos = new HashSet<>(Arrays.asList(alergenos));
 		
 		this.calorias = calorias;
-		this.proteinas = proteinas;
-		this.grasas = grasas;
-		this.carbohidratos = carbohidratos;
+		proteinas = proteinasPor100Gramos/100;
+		grasas = grasasPor100Gramos/100,
+		carbohidratos = cabohidratosPor100Gramos;
+		
 	}
 	
 	public String getNombre(){
