@@ -6,29 +6,25 @@ public class Alimento {
 	private String nombre;
 	private Set<Alergeno> alergenos;
 	
-	private float calorias;
-	private float proteinas;
-	private float grasas;
-	private float carbohidratos;
-	private float proteinasPor100Gramos;
-	private float carbohidratosPor100Gramos;
-	private float grasasPor100Gramos;
+	private float calorias; 		// Por cada 100g
+	private float proteinas; 		// Por cada 100g
+	private float grasas; 			// Por cada 100g
+	private float carbohidratos;	// Por cada 100g
 	
-	public Alimento(String nombre, float calorias,float grasasPor100Gramos,float carbohidratosPor100Gramos
-			           ,float proteinasPor100Gramos, Alergeno ... alergenos){
+	private float cantidad;			// En gramos
+	
+	public Alimento(String nombre, float cantidad, float calorias, float grasas, float carbohidratos,
+	           float proteinas, Alergeno ... alergenos){
 		this.nombre = nombre;
 		
 		this.alergenos = new HashSet<>(Arrays.asList(alergenos));
 		
-		this.calorias = calorias;
-		proteinas = proteinasPor100Gramos/100;
-		grasas = grasasPor100Gramos/100,
-		carbohidratos = cabohidratosPor100Gramos;
+		this.cantidad = cantidad;
 		
-	}
-	
-	public String getNombre(){
-		return nombre;
+		this.calorias = calorias;
+		this.proteinas = proteinas;
+		this.grasas = grasas;
+		this.carbohidratos = carbohidratos;
 	}
 
 	public boolean contieneAlergenos(List<Alergeno> alergenos){
@@ -39,19 +35,29 @@ public class Alimento {
 		return false;
 	}
 	
+	// Getters
+	
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public String getCantidad(){
+		return cantidad;
+	}
+	
 	public float getCalorias(){
-		return calorias;
+		return calorias/100 * cantidad;
 	}
 	
 	public float getProteinas(){
-		return proteinas;
+		return proteinas/100 * cantidad;
 	}
 	
 	public float getGrasas(){
-		return grasas;
+		return grasas/100 * cantidad;
 	}
 	
 	public float getCarbohidratos(){
-		return carbohidratos;
+		return carbohidratos/100 * cantidad;
 	}
 }
