@@ -10,6 +10,9 @@ public class Alimento {
 	private float proteinas;
 	private float grasas;
 	private float carbohidratos;
+	private float proteinasPor100Gramos;
+	private float carbohidratosPor100Gramos;
+	private float grasasPor100Gramos;
 	
 	public Alimento(String nombre, float calorias, float grasas, float carbohidratos,
 			           float proteinas, Alergeno ... alergenos){
