@@ -2,9 +2,16 @@ package prCompumatica;
 
 public class AsistenteDieta {
 
+	private static List<Plato> platosAlmCena, platosDesMer;
+	
 	public static String hacerSugerencia(String usuario) {
-		// La IA consultará la BD con el nombre de usuario para ver los datos del mismo y así saber que sugerencia hacer
+		filtrar(usuario.getAlergenos(), usuario.getAlimentosVetados());
 		return "";
+	}
+	
+	private static void filtrar(List<Alergeno> alergenos, List<Alimento> vetados){
+		platosAlmCena.removeIf(p -> vetados.contains(p) || p.contieneAlergenos(alergenos));
+		platosDesMer.removeIf(p -> vetados.contains(p) || p.contieneAlergenos(alergenos));
 	}
 
 }
