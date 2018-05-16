@@ -6,12 +6,12 @@ public class Alimento {
 	private String nombre;
 	private Set<Alergeno> alergenos;
 	
-	private float calorias; 		// Por cada 100g
-	private float proteinas; 		// Por cada 100g
-	private float grasas; 			// Por cada 100g
-	private float carbohidratos;	// Por cada 100g
+	private float calorias;        // Por cada 100g
+	private float proteinas;       // Por cada 100g
+	private float grasas; 	       // Por cada 100g
+	private float carbohidratos;   // Por cada 100g
 	
-	private float cantidad;			// En gramos
+	private float cantidad;        // En gramos
 	
 	public Alimento(String nombre, float cantidad, float calorias, float grasas, float carbohidratos,
 	           float proteinas, Alergeno ... alergenos){
