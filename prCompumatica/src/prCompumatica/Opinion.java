@@ -13,5 +13,4 @@ public class Opinion {
 	public void mandarOpinion(Datos datos){
 		datos.recibirOpinion(this.op);
 	}
-	//This is just some dummy test. Hi. Now once again version 2.
 }
