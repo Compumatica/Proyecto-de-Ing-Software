@@ -1,3 +1,4 @@
+package prCompumatica;
 
 /**
  * @author Manuel

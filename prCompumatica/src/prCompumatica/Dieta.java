@@ -30,6 +30,9 @@ public class Dieta {
 			case CENA:
 				dieta.put(Comidas.CENA, p);
 				break;
+				
+			default:
+				break;
 		}
 	}
 	
