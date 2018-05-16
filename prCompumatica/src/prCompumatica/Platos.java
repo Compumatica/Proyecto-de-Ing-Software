@@ -65,10 +65,4 @@ public class Platos {
 		componentes=comp;
 	}
 	
-	public int getGrasas(){
-		aux Alimento;
-		return grasas;
-	}
-		
-	
 }

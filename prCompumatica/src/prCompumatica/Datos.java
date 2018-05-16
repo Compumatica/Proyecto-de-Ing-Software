@@ -17,7 +17,7 @@ public class Datos {
 		return "";
 	}
 
-	public static void RegistraUsuario(String usuario, String contraseña, String email) {
+	public static void RegistraUsuario(String usuario, String password, String email) {
 		// TODO Auto-generated method stub
 		
 	}

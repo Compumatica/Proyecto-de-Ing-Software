@@ -2,14 +2,14 @@ package prCompumatica;
 
 public class Usuario {
 	private String usuario;
-	private String contraseña;
+	private String password;
 	private String email;
 	
-	public Usuario(String usuario, String contraseña, String email){
+	public Usuario(String usuario, String password, String email){
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.password = password;
 		this.email = email;
-		Datos.RegistraUsuario(usuario, contraseña, email);
+		Datos.RegistraUsuario(usuario, password, email);
 	}
 	
 	public String consultarDatosPersonales() {
