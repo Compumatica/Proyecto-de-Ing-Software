@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Platos {
 	String nombre;
 	private ArrayList<Alimento> componentes;
-	int Grasas, Carbohidratos, Proteinas;
+	int Grasas = 0, Carbohidratos = 0, Proteinas = 0;
 	
 	// True -> El plato es de almuerzo o cena 
 	// False -> El plato es de cena o merienda
@@ -46,14 +46,23 @@ public class Platos {
 	}
 	
 	public int getGrasas() {
+		for(Alimento a : componentes) {
+			Grasas += a.getGrasas();
+		}
 		return Grasas;
 	}
 	
 	public int getCarbohidratos() {
+		for(Alimento a : componentes) {
+			Carbohidratos += a.getCarbohidratos();
+		}
 		return Carbohidratos;
 	}
 	
 	public int getProteinas() {
+		for(Alimento a : componentes) {
+			Proteinas += a.getProteinas();
+		}
 		return Proteinas;
 	}
 	
