@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Platos {
 	String nombre;
 	private ArrayList<Alimento> componentes;
-	int Grasas = 0, Carbohidratos = 0, Proteinas = 0;
+	float Grasas = 0, Carbohidratos = 0, Proteinas = 0;
 	
 	// True -> El plato es de almuerzo o cena 
 	// False -> El plato es de cena o merienda
