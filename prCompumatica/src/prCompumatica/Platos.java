@@ -45,21 +45,21 @@ public class Platos {
 		return franjaAlmuerzo;
 	}
 	
-	public int getGrasas() {
+	public float getGrasas() {
 		for(Alimento a : componentes) {
 			Grasas += a.getGrasas();
 		}
 		return Grasas;
 	}
 	
-	public int getCarbohidratos() {
+	public float getCarbohidratos() {
 		for(Alimento a : componentes) {
 			Carbohidratos += a.getCarbohidratos();
 		}
 		return Carbohidratos;
 	}
 	
-	public int getProteinas() {
+	public float getProteinas() {
 		for(Alimento a : componentes) {
 			Proteinas += a.getProteinas();
 		}
