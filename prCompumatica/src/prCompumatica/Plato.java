@@ -67,4 +67,8 @@ public class Plato {
 		return carbohidratos;
 	}
 	
+	@Override
+	public String toString() {
+		return nombre;
+	}	
 }
