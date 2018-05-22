@@ -17,7 +17,7 @@
       
 3. Escenario del caso: Borrar cuenta
 ---------------------------------------------
-  1- El usuario o administrador manda una petición para borrar la cuenta.
+  1- El usuario manda una petición para borrar la cuenta.
   2- La cuenta se borra.
 
 4. Escenario del caso: Contactar administrador
@@ -46,7 +46,57 @@
       1-Volver a introducir una contraseña válida.
     -Caso 3: Se introducen datos incorrectos (fuera de rango, o de tipo incorrecto)
       1-Volver a introducir datos.
+      
 6. Escenario del caso: Responder al soporte
 ---------------------------------------------
   1- El administrador recibe el ticket.
   2- Contacta al ticket y le manda la respuesta al usuario.
+  
+7. Escenario del caso: Añadir datos personales
+---------------------------------------------
+  1- El usuario introduce sus datos personales.
+  2- Se guardan en la Base de Datos
+  
+8.Escenario del caso: Pedir estadísitcas
+---------------------------------------------
+  1- Se solicita una gráfica con los platos ingeridos del día anterior.
+  2- La IA consulta los datos.
+  2- Se muestran los platos ingeridos.
+  
+9. Escenario del caso: Autenticarse
+---------------------------------------------
+  1- El usuario inicia sesión.
+  *Casos Alternativos:
+    -Caso 1: Fallo en el correo o contraseña.
+      1- El usuario vuelve a introducir correo y contraseña que sean válidos
+    -Caso 2: Usuario que no se ha registrado previamente
+      1- El usuario deberá registrarse.
+    
+  
+10. Escenario del caso: Valorar sugerencia
+---------------------------------------------
+  1-El usuario hace una valoración de la sugerencia dada por la IA.
+  
+11. Escenario del caso: Modificar algoritmo de la IA
+---------------------------------------------
+  1-El administrador hace cambios en el algoritmo debido a un error u otra causa.
+  
+12. Escenario del caso: Mostrar Sugerencia
+---------------------------------------------
+  1- El usuario solicita una sugerencia.
+  2- La IA consulta los datos necesarios.
+  3- Muestra un plato en base a esos datos.
+  
+13. Escenario del caso: Agregar nuevos productos
+---------------------------------------------
+  1- El administrador añade un ingrediente a la Base de Datos.
+  
+14. Escenario del caso: Eliminar un producto
+  1- El administrador elimina un ingrediente de la Base de Datos.
+
+15. Escenario del caso: Eliminar cuenta
+  1- El administrador elimina una cuenta cuyo usuario solicitó.
+  2- Se eliminan los datos de la cuenta y del usuario.
+  
+16. Escenario del caso: Responder a sugerencia
+  1- La IA muestra una sugerencia solicitada previamente.
