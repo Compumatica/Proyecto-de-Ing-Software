@@ -70,10 +70,10 @@ public class Plato {
 	public String showDetails() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Nombre: "+nombre+"\n");
-		sb.append("Calorias: "+calorias+"\n");
-		sb.append("Proteinas: "+proteinas+"\n");
-		sb.append("Grasas: "+grasas+"\n");
-		sb.append("Carbohidratos: "+carbohidratos+"\n");
+		sb.append("Calorias: \t"+calorias+"\n");
+		sb.append("Proteinas: \t"+proteinas+"\n");
+		sb.append("Grasas: \t"+grasas+"\n");
+		sb.append("Carbohidratos: \t"+carbohidratos+"\n");
 		return sb.toString();
 	}
 	
