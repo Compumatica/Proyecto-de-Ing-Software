@@ -41,7 +41,7 @@ public class Alimento {
 		return nombre;
 	}
 	
-	public String getCantidad(){
+	public float getCantidad(){
 		return cantidad;
 	}
 	
