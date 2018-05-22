@@ -9,7 +9,7 @@ public class Usuario {
 		this.usuario = usuario;
 		this.password = password;
 		this.email = email;
-		Datos.RegistraUsuario(usuario, password, email);
+		Datos.registraUsuario(usuario, password, email);
 	}
 	
 	public String consultarDatosPersonales() {
