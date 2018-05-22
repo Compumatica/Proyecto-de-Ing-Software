@@ -67,6 +67,16 @@ public class Plato {
 		return carbohidratos;
 	}
 	
+	public String showDetails() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nombre: "+nombre+"\n");
+		sb.append("Calorias: "+calorias+"\n");
+		sb.append("Proteinas: "+proteinas+"\n");
+		sb.append("Grasas: "+grasas+"\n");
+		sb.append("Carbohidratos: "+carbohidratos+"\n");
+		return sb.toString();
+	}
+	
 	@Override
 	public String toString() {
 		return nombre;
