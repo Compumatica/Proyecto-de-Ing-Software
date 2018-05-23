@@ -1,4 +1,4 @@
-package test;
+package prCompumatica;
 public interface IBaseDeDatos {
 	
 	
