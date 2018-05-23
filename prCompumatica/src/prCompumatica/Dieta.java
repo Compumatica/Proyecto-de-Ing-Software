@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Dieta {
 	
 	private Plato[] platos;
-	private int grasas, carbohidratos, proteinas, calorias;
+	private float grasas, carbohidratos, proteinas, calorias;
 	
 	public Dieta() {
 		platos = new Plato[4];
