@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    <title>COMPUMATICA</title>    
+    <meta charset="UTF-8">
+    <meta name="title" content="COMPUMATICA">
+    <meta name="description" content="Cuida tu vida.">    
+    <link href="(DOMINIO)" rel="stylesheet" type="text/css"/>    
+  </head>  
+  <body>    
+    <header>
+      <h1>COMPUMATICA</h1>      
+    </header>    
+    <nav>
+      <a href="(dominio)">LOGIN</a>
+      <a href="(DOMINIO)">REGISTRATE</a>
+	  <a href="(DOMINIO)">TERMINOS Y CONDICIONES</a>
+	  <a href="(DOMINIO)">DIETAS</a>
+	  <a href="(DOMINIO)">ALERGENOS</a>
+      <a href="(DOMINIO)">LOGOUT</a>
+    
+	</nav>
+    <section>      
+      <article>
+        <h2>SOBRE NOSOTROS</h2>
+        <p>En esta web te ayudaremos a llevar una vida más sana, a través de dietas y ejercicio diarios. Regulando tu día a día.</p>
+        <div>
+          <p>LOGO</p>
+          <img src="IMAGEN XD" alt="">          
+        </div>
+      </article>      
+    </section>
+    <aside>
+      <h3>EQUIPO</h3>
+      <a href="(DOMINIO)">
+        <img src="(imagen)" alt="equipo">
+      </a>
+    </aside>
+    <footer>
+      <h4>Avisos legales</h4>
+      <a href="(dominio)">Política de cookies</a>
+      <h4>Redes sociales</h4>
+      <a href="link twitter o algo xd">Twitter</a>
+	  <h4>Términos y bases legales<h4>
+	  <a href="link al dominio"> Bases legales</a>
+    </footer>
+  </body>  
+</html>
