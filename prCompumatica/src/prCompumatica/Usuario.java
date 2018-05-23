@@ -28,6 +28,7 @@ public class Usuario {
 		this.contraseña = contraseña;
 		this.email = email;
 		this.sexo = sexo;
+		Datos.RegistraUsuario(this);
 	}
 	
 	public void setAlergenos(Alergeno...alergenos) {
@@ -47,15 +48,15 @@ public class Usuario {
 	}
 	
 	public String consultarDatosPersonales() {
-		return ""; // dejar asi hasta que tengamos la clase de bd
+		return Datos.datosPersonales(this);
 	}
 	
 	public String consultarDatosSobreDietas() {
-		return ""; // dejar asi hasta que tengamos la clase de bd
+		return Datos.datosDietas(this);
 	}
 	
 	public String modificarDatos() {
-		return ""; // dejar asi hasta que tengamos la clase de bd
+		return Datos.modificaDatosPersonales(this);
 	}
 	
 	public void darOpinion(String texto) {
