@@ -47,28 +47,28 @@ public class Dieta {
 		return platos[3];
 	}
 	
-	public int getGrasas() {
+	public float getGrasas() {
 		for(int i = 0; i < 4; i++) {
 			grasas += platos[i].getGrasas();
 		}
 		return grasas;
 	}
 	
-	public int getCalorias() {
+	public float getCalorias() {
 		for(int i = 0; i < 4; i++) {
 			calorias += platos[i].getCalorias();
 		}
 		return calorias;
 	}
 	
-	public int getCarbohidratos() {
+	public float getCarbohidratos() {
 		for(int i = 0; i < 4; i++) {
 			carbohidratos += platos[i].getCarbohidratos();
 		}
 		return carbohidratos;
 	}
 	
-	public int getProteinas() {
+	public float getProteinas() {
 		for(int i = 0; i < 4; i++) {
 			proteinas += platos[i].getProteinas();
 		}
