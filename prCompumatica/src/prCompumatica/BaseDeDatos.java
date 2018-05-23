@@ -1,4 +1,4 @@
-package test;
+package prCompumatica;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
