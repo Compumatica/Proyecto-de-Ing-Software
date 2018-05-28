@@ -13,22 +13,39 @@ public class BaseDeDatos implements IBaseDeDatos{
 	
 	public static URL URL_LOGIN;
 	public static URL URL_EMAIL_EXISTS;
-	private final static String OK = "0";
+	public static URL URL_SIGNUP;
 	
-	private Usuario usuario;
-	
-	public BaseDeDatos() {
+	static{
 		try {
 			URL_LOGIN = new URL("http://compumatica.dx.am/login.php");
 			URL_EMAIL_EXISTS = new URL("http://compumatica.dx.am/email_tester.php");
+			URL_SIGNUP = new URL("http://compumatica.dx.am/signup.php");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	private final static String OK = "0";
+	
+	private Usuario usuario;
+	
 	@Override
-	public void registrarCuenta(String usuario, String clave, String email) {
-		this.usuario = new Usuario(usuario, clave, email);
+	public boolean registrarCuenta(String usuario, String clave, String email) {
+		Tupla t1 = new Tupla("Usuario", usuario);
+		Tupla t2 = new Tupla("Clave", clave);
+		Tupla t3 = new Tupla("Edad", "25");
+		Tupla t4 = new Tupla("Correo", email);
+		Tupla t5 = new Tupla("Sexo", "-1");
+		
+		if(!emailValido(email)){
+			throw new RuntimeException("Email no valido");
+		}
+		
+		if(receiveEcho(URL_SIGNUP, t1, t2, t3, t4, t5).equals(OK)){
+			this.usuario = new Usuario(usuario, clave, email);
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -51,7 +68,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 	}
 	
 	private boolean emailValido(String email){
-		String regex = " ^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"; // Basado en el formato de RFC 5322
+		String regex = "^(.+)@(.+)$";
 		Pattern pattern = Pattern.compile(regex);
 		 
 		return pattern.matcher(email).matches();
@@ -96,7 +113,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 			for (int c; (c = in.read()) >= 0;)
 			    res += (char) c;
 
-			//System.out.println(res); // DEBUGGING
+			System.out.println(res); // DEBUGGING
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -109,6 +126,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 	public Usuario usuarioLogueado() {
 		return usuario;
 	}
+	
 	
 	class Tupla {
 		String t1, t2;
@@ -133,5 +151,4 @@ public class BaseDeDatos implements IBaseDeDatos{
 			t2 = s;
 		}
 	}
-	
 }
