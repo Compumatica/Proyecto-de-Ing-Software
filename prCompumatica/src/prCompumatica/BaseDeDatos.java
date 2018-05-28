@@ -19,6 +19,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 	public BaseDeDatos() {
 		try {
 			URL_LOGIN = new URL("http://compumatica.dx.am/login.php");
+			URL_EMAIL_EXISTS = new URL("http://compumatica.dx.am/email_tester.php");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +42,18 @@ public class BaseDeDatos implements IBaseDeDatos{
 
 	@Override
 	public boolean existeEmail(String email) {
-		return receiveEcho(URL_EMAIL_EXISTS).equals(OK);
+		if(!emailValido(email)){ // Si el email no es valido, es imposible que esté asociada a algún usuario
+			//System.out.println("Email no valido"); // DEBUGGING
+			return false;
+		}
+		return receiveEcho(URL_EMAIL_EXISTS, new Tupla("Correo", email)).equals(OK);
+	}
+	
+	private boolean emailValido(String email){
+		String regex = " ^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"; // Basado en el formato de RFC 5322
+		Pattern pattern = Pattern.compile(regex);
+		 
+		return pattern.matcher(email).matches();
 	}
 
 	@Override
@@ -68,7 +80,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 			// Convert string to byte array, as it should be sent
 			byte[] postDataBytes = postData.toString().getBytes("UTF-8");
 				conn = (HttpURLConnection)phpURL.openConnection();
-				System.out.println("conex");
+				//System.out.println("Conex"); // DEBUGGING
 			// Tell server that this is POST and in which format is the data
 			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
