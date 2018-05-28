@@ -105,6 +105,11 @@ public class BaseDeDatos implements IBaseDeDatos{
 		return res.trim();
 	}
 	
+	@Override
+	public Usuario usuarioLogueado() {
+		return usuario;
+	}
+	
 	class Tupla {
 		String t1, t2;
 		public Tupla(String t1, String t2) {
