@@ -3,12 +3,10 @@ package prCompumatica;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class BaseDeDatos implements IBaseDeDatos{
 	
@@ -17,7 +15,6 @@ public class BaseDeDatos implements IBaseDeDatos{
 	private final static String OK = "0";
 	
 	private Usuario usuario;
-	private boolean existe = false;
 	
 	public BaseDeDatos() {
 		try {
@@ -39,12 +36,12 @@ public class BaseDeDatos implements IBaseDeDatos{
 
 	@Override
 	public boolean verificarCredenciales(String campo, String clave, boolean campoEsEmail) {
-		return sendEcho(URL_LOGIN, new Tupla("Nombre", campo), new Tupla("Clave", clave)).equals(OK);	
+		return receiveEcho(URL_LOGIN, new Tupla("Nombre", campo), new Tupla("Clave", clave)).equals(OK);	
 	}
 
 	@Override
 	public boolean existeEmail(String email) {
-		return getEcho(URL_EMAIL_EXISTS).equals(OK);
+		return receiveEcho(URL_EMAIL_EXISTS).equals(OK);
 	}
 
 	@Override
@@ -56,22 +53,8 @@ public class BaseDeDatos implements IBaseDeDatos{
 	public void cambiarClave(String usuario, String clave, String nuevaClave) {
 		
 	}
-	
-	private String getEcho(URL phpURL) {
-		String res = "";
-
-		try(BufferedReader in = new BufferedReader(new InputStreamReader(phpURL.openStream()))){
-			String inputLine;
-			while ((inputLine = in.readLine()) != null)
-				    res = inputLine;
-		} catch(Exception e) {
-
-		}
-
-		return res.trim();
-	}
-	
-	private String sendEcho(URL phpURL, Tupla ... pares) {
+		
+	private String receiveEcho(URL phpURL, Tupla ... pares) {
 		String res = "";
 
 		StringBuilder postData = new StringBuilder();
