@@ -4,22 +4,32 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.Reader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
 public class BaseDeDatos implements IBaseDeDatos{
 	
-	public final static URL URL_LOGIN = new URL("");
-	public final static URL URL_EMAIL_EXISTS = new URL("");
+	public static URL URL_LOGIN;
+	public static URL URL_EMAIL_EXISTS;
 	private final static String OK = "0";
 	
 	private Usuario usuario;
 	private boolean existe = false;
 	
+	public BaseDeDatos() {
+		try {
+			URL_LOGIN = new URL("http://compumatica.dx.am/login.php");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void registrarCuenta(String usuario, String clave, String email) {
-		usuario = new Usuario(usuario, clave, email);
+		this.usuario = new Usuario(usuario, clave, email);
 	}
 
 	@Override
@@ -29,7 +39,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 
 	@Override
 	public boolean verificarCredenciales(String campo, String clave, boolean campoEsEmail) {
-		return getEcho(URL_LOGIN).equals(OK);	
+		return sendEcho(URL_LOGIN, new Tupla("Nombre", campo), new Tupla("Clave", clave)).equals(OK);	
 	}
 
 	@Override
@@ -49,36 +59,54 @@ public class BaseDeDatos implements IBaseDeDatos{
 	
 	private String getEcho(URL phpURL) {
 		String res = "";
-        BufferedReader in = new BufferedReader(new InputStreamReader(phpURL.openStream()));
-        String inputLine;
-        while ((inputLine = in.readLine()) != null)
-            res = inputLine;
-        in.close();
-        return res.trim();
+
+		try(BufferedReader in = new BufferedReader(new InputStreamReader(phpURL.openStream()))){
+			String inputLine;
+			while ((inputLine = in.readLine()) != null)
+				    res = inputLine;
+		} catch(Exception e) {
+
+		}
+
+		return res.trim();
 	}
 	
 	private String sendEcho(URL phpURL, Tupla ... pares) {
-		 try {
-	            // open a connection to the site
-	            URLConnection con = phpURL.openConnection();
-	            // activate the output
-	            con.setDoOutput(true);
-	            PrintStream ps = new PrintStream(con.getOutputStream());
-	            // send your parameters to your site
-	            for(Tupla p : pares) {
-	            	ps.print("&" + p.s1() + "=" + p.s2());
-	            }
+		String res = "";
 
-	            // we have to get the input stream in order to actually send the request
-	            con.getInputStream();
+		StringBuilder postData = new StringBuilder();
 
-	            // close the print stream
-	            ps.close();
-            } catch (MalformedURLException e1) {
-                e1.printStackTrace();
-            } catch (IOException e2) {
-                e2.printStackTrace();
-            }
+		for(Tupla p : pares) {
+			postData.append("&" + p.s1() + "=" + p.s2());
+		}
+		//System.out.println(postData.toString()); // DEBUGGING
+		HttpURLConnection conn;
+			try {
+			// Convert string to byte array, as it should be sent
+			byte[] postDataBytes = postData.toString().getBytes("UTF-8");
+				conn = (HttpURLConnection)phpURL.openConnection();
+				System.out.println("conex");
+			// Tell server that this is POST and in which format is the data
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+			conn.setDoOutput(true);
+			conn.getOutputStream().write(postDataBytes);
+
+			//System.out.println("Mandado"); // DEBUGGING
+			// This gets the output from your server
+			Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+			for (int c; (c = in.read()) >= 0;)
+			    res += (char) c;
+
+			//System.out.println(res); // DEBUGGING
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		return res.trim();
 	}
 	
 	class Tupla {
@@ -93,7 +121,7 @@ public class BaseDeDatos implements IBaseDeDatos{
 		}
 		
 		public String s2() {
-			return t1;
+			return t2;
 		}
 		
 		public void setS1(String s) {
