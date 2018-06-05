@@ -1,0 +1,150 @@
+
+#main-panel{
+    height: 100%;
+    width: auto;
+    float: left;
+}
+
+/* SIDEBAR */
+.tab{
+    font-family: Arial;
+    color: rgb(85, 85, 85);
+    text-align: center;
+    padding: 15px;
+}
+
+.tab > label{
+    font-size: 0.9em;
+    font-family: Arial;
+}
+
+.tab-icon{
+    font-size: 1.8em;
+}
+
+#selected-tab{
+    color: rgb(38, 129, 220);
+}
+
+/* MAIN PANEL */
+.dish-panel{
+    width: 500px; /* 44% */
+    height: 300px; /* 46% */
+    
+    margin: 20px;
+
+    overflow: hidden;
+    
+    color: rgb(30, 30, 30);
+    font-family: Tahoma, Arial;
+    
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px 1px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.dish-panel:hover{
+    box-shadow: 5px 5px 30px 1px rgba(0,0,0,0.3);
+}
+
+.dish-panel-img{
+    width: 500px;
+    height: 300px;
+    
+    position: relative;
+    top: -50px;
+    
+    border-radius: 5px 5px 0 0;
+    
+    transition: transform 0.1s ease-in-out;
+}
+
+.dish-panel-img:hover{
+    -webkit-transform: scale(1.01);
+}
+
+.dish-panel-footer{
+    background-color: white;
+    width: 500px;
+    height: 55px;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    top: -55px;
+    padding: 10px;
+    padding-top: 5px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.dish-panel-footer > label{ 
+    font-size: 13px;
+    color: rgb(60, 60, 60);
+}
+
+/* STATS */
+
+.panel-stat{
+    width: 400px; /* 44% */
+    height: 300px; /* 46% */
+    
+    margin: 20px;
+
+    overflow: hidden;
+    
+    color: rgb(30, 30, 30);
+    font-family: Tahoma, Arial;
+    
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px 1px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease-in-out;
+    
+    background-color: white;
+}
+
+.panel-stat:hover{
+    box-shadow: 5px 5px 30px 1px rgba(0,0,0,0.3);
+}
+
+.panel-stat > hr{
+    border: 0;
+    height: 0;
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    top: 10px;
+}
+
+.panel-stat > label{
+    margin: 10px;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+#piechart{
+    position: relative;
+    top: -57px;
+    left: -57.5px;
+    background-color: transparent;
+}
+
+.label {
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 11px;
+    float: right;
+    font-weight: bold;
+}
+
+.breakfast {background-color: #ff9800;} /* Naranja */
+.lunch {background-color: #2196F3;} /* Blue */
+.snack {background-color: #4CAF50;} /* Blue */
+.dinner {background-color: #f44336;} /* Blue */
+
