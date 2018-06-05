@@ -3,7 +3,7 @@ package prCompumatica;
 /**
  * @author Manuel
  * @see <a href="https://www.makro.es/servicios/alergenos/nueva-ley-alergenos/los-14-alergenos-informar-con-la-nueva-ley">
- *  Lista de sustancias peligrosas para alergicos según la Ley de Informacion alimentaria vigente</a>
+ *  Lista de sustancias peligrosas para alergicos segÃºn la Ley de Informacion alimentaria vigente</a>
  */
 public enum Alergeno {
 	LACTOSA,
