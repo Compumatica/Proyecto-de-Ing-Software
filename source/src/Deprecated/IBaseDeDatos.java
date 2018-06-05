@@ -1,6 +1,6 @@
 /*
   Historial:
-   - 11-04-2018: Creado por Manuel López Reviriego
+   - 11-04-2018: Creado por Manuel LÃ³pez Reviriego
    - 24-04-2018: Editado por Meead y Alejandro
 */
 public interface IBaseDeDatos {
